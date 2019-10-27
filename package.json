@@ -1,0 +1,44 @@
+{
+    "name": "cdmx007-tic-tac-toe-rn",
+    "version": "1.0.0",
+    "description": "TICTACTOE with React and firebase",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "webpack-dev-server --open"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/IselaReyesPerdomo94/CDMX007-TIC-TAC-TOE-RN.git"
+    },
+    "keywords": [
+        "tic-tac-toe",
+        "michi",
+        "3",
+        "en",
+        "raya",
+        "gatito",
+        "React"
+    ],
+    "author": "Isela Reyes Perdomo",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/IselaReyesPerdomo94/CDMX007-TIC-TAC-TOE-RN/issues"
+    },
+    "homepage": "https://github.com/IselaReyesPerdomo94/CDMX007-TIC-TAC-TOE-RN#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.6.4",
+        "@babel/core": "^7.6.4",
+        "@babel/preset-env": "^7.6.3",
+        "@babel/preset-react": "^7.6.3",
+        "babel-loader": "^8.0.6",
+        "html-webpack-plugin": "^3.2.0",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.9",
+        "webpack-dev-server": "^3.9.0"
+    },
+    "dependencies": {
+        "react": "^16.11.0",
+        "react-dom": "^16.11.0"
+    }
+}

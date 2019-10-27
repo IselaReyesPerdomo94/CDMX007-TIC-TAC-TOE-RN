@@ -1,4 +1,4 @@
-# Tic tac toe - PWA creada con React y firebase.
+# Tic tac toe - APP creada con React y firebase.
 
 ## Índice
 
@@ -29,10 +29,34 @@ el uso de React sin hooks.
 ## 4. Consideraciones generales
 
 La lógica del proyecto esta implementada completamente en JavaScript (ES6).
-Se iran agregando las linbrerías utilizadas en este apartado. 
+Se iran agregando las librerías utilizadas en este apartado. 
 
+### Dependencias utilizadas
+En el archivo de package.json podras encontrar las siguientes dependencias de babel, guardadas, como dependencias de desarrollador.
+Babel sirve para transpilar código de JS6 a JS5 con la finalidad que todos los navegadores puedan entenderlo.
+   - @babel/core 
+   - @babel-loader 
+   - @babel/cli
+   - @babel/preset-env
+   - @babel/preset-react (este es exclusivo para usarlo con React)
+
+También encontrarás algunas dependencias de webpack que es un sistema de empaquetador para procesar y preparar el desarrollo de una applicación web para producción.
+
+Webpack permite que trabajes con cualquier tipo de archivo (como preprocesadores de CSS, o componentes de React), las dev dependencias que instalé fueron:
+
+    - html-webpack-plugin
+    - webpack
+    - webpack-cli
+    - webpack-dev-server
+
+Y por supuesto instalé React y react-dom como dependencias para el cliente.
+- react
+- react-dom
+
+Finalmente encontrarás un archivo llamado "webpack.config.js" donde se específica a webpack la manera en la que queremos que se empaqueten los módulos y archivos de app.
+
+Y un archivo llamado "jsconfig.json" para configurar como llamaremos a nuestros componentes.
 ## 5. Prototipo de alta fidelidad
-
 
 ## 6. Checklist de entregable
 
