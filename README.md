@@ -53,9 +53,14 @@ Y por supuesto instalé React y react-dom como dependencias para el cliente.
 - react
 - react-dom
 
+Para poder estilizar el juego instalé:
+ - css-loader
+ - style-loader
+
 Finalmente encontrarás un archivo llamado "webpack.config.js" donde se específica a webpack la manera en la que queremos que se empaqueten los módulos y archivos de app.
 
-Y un archivo llamado "jsconfig.json" para configurar como llamaremos a nuestros componentes.
+Y un archivo llamado "jsconfig.json" para configurar como llamaremos a nuestros componentes. Este [url](https://www.freecodecamp.org/news/how-to-set-up-deploy-your-react-app-from-scratch-using-webpack-and-babel-a669891033d4/),
+puede ser de gran utilidad para dejar más claro el porque de esta configuración.
 ## 5. Prototipo de alta fidelidad
 
 Puedes verlo en este [link](https://www.figma.com/file/cB9SdDPAL8rJ0XiDneGfHJ/tic-tac-toe?node-id=0%3A1)
