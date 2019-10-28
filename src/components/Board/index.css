@@ -1,0 +1,8 @@
+.board {
+    display: grid;
+    height: 60vh;
+    border: 3px solid #E5D4ED;
+    border-radius: 10px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
