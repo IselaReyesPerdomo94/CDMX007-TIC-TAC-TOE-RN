@@ -1,4 +1,4 @@
-# Tic tac toe - APP creada con React y firebase.
+# Michi - APP creada con React y firebase.
 
 ## Índice
 
@@ -57,6 +57,11 @@ Finalmente encontrarás un archivo llamado "webpack.config.js" donde se específ
 
 Y un archivo llamado "jsconfig.json" para configurar como llamaremos a nuestros componentes.
 ## 5. Prototipo de alta fidelidad
+
+Puedes verlo en este [link](https://www.figma.com/file/cB9SdDPAL8rJ0XiDneGfHJ/tic-tac-toe?node-id=0%3A1)
+
+O aquí abajo:
+['prototipo']()
 
 ## 6. Checklist de entregable
 
