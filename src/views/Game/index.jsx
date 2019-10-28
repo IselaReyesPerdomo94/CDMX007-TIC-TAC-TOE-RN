@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import Board from 'components/Board';
+import YellowButton from 'components/YellowButton/';
 import './index.css';
 
 class Game extends Component{
@@ -12,6 +13,9 @@ class Game extends Component{
                 <main className="game">
                     <Board/>
                 </main>
+                <footer>
+                    <YellowButton text='Salir' link='/'/>
+                </footer>
             </Fragment>
         )
     }
