@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #334139;
+}
+
+h1 {
+    color: white;
+    font-size: 4rem;
+    margin: 1rem auto;
+    text-align: center;
+    font-family: Neucha;
+}
+
+figure {
+    margin: 0;
+}
+
+.home {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.michi-face {
+    margin: 0;
+    height: 7rem;
+    transform: rotate(180deg)
+}
+
+.demo {
+    height: 40vh;
+    margin-bottom: 1rem;
+}
+
+.yellow-button {
+    border: none;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 10px;
+    font-family: Neucha;
+    text-decoration: none;
+    background-color: #F2C94C;
+    color: black;
+}
+
+@media screen and (min-width: 768px) {
+    .yellow-button:hover {
+        transform: scale(1.1);
+        background-color: rgb(253, 226, 144);
+    }
+}
