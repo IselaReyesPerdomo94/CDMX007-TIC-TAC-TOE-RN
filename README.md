@@ -61,7 +61,7 @@ Y un archivo llamado "jsconfig.json" para configurar como llamaremos a nuestros 
 Puedes verlo en este [link](https://www.figma.com/file/cB9SdDPAL8rJ0XiDneGfHJ/tic-tac-toe?node-id=0%3A1)
 
 O aquí abajo:
-['prototipo']()
+['prototipo'](https://github.com/IselaReyesPerdomo94/CDMX007-TIC-TAC-TOE-RN/blob/master/public/img/prototipo.png)
 
 ## 6. Checklist de entregable
 
