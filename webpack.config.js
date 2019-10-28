@@ -1,15 +1,20 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const root = path.resolve(__dirname, 'src')
 
 const config = {
+    mode: process.env.NODE_ENV || 'development',
     entry: {
         main: `${root}/index.jsx`
     },
     output: {
-        path: path.resolve(__dirname, 'public')
+        path: path.resolve(__dirname, 'build'),
+        publicPath: '/CDMX007-TIC-TAC-TOE-RN/'
     },
     devServer: {
         port: 8080,
