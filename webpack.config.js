@@ -14,7 +14,7 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        publicPath: '/CDMX007-TIC-TAC-TOE-RN/'
+        // publicPath: '/CDMX007-TIC-TAC-TOE-RN/'
     },
     devServer: {
         port: 8080,

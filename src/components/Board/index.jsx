@@ -1,35 +1,23 @@
 import React, {Component} from 'react';
-import Square from 'components/Square/index';
+import SquareBox from 'components/SquareBox/';
+import './index.css';
 
-class Board extends Component {
-    renderSquare(i) {
-      return <Square />;
+class Board extends Component{
+    render(){
+        return(
+            <div className="board">
+                <SquareBox/>
+                <SquareBox/>
+                <SquareBox/>
+                <SquareBox/>
+                <SquareBox/>
+                <SquareBox/>
+                <SquareBox/>
+                <SquareBox/>
+                <SquareBox/>
+            </div>
+        )
     }
-  
-    render() {
-      const status = 'Next player: X';
-  
-      return (
-        <div>
-          <div className="status">{status}</div>
-          <div className="board-row">
-            {this.renderSquare(0)}
-            {this.renderSquare(1)}
-            {this.renderSquare(2)}
-          </div>
-          <div className="board-row">
-            {this.renderSquare(3)}
-            {this.renderSquare(4)}
-            {this.renderSquare(5)}
-          </div>
-          <div className="board-row">
-            {this.renderSquare(6)}
-            {this.renderSquare(7)}
-            {this.renderSquare(8)}
-          </div>
-        </div>
-      );
-    }
-  }
+}
 
-  export default Board;
+export default Board;
