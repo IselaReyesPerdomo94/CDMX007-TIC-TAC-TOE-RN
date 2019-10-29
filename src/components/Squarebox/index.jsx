@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+// import {Oplayer, Xplayer} from 'components/Player/';
 import './index.css';
 
 class SquareBox extends Component{
@@ -17,10 +18,11 @@ class SquareBox extends Component{
         changeTurn()
     }
    render(){
-       
-       return( 
-           <button className="square-box" onClick={()=> this.printAndChangeTurn()}>{this.state.value}</button>
-       )
+       const symbol = this.state.value;
+        const turnColor = `square-box ${symbol === 'X' ? 'green': 'pink'}`
+        return( 
+           <button className={turnColor} onClick={()=> this.printAndChangeTurn()}>{this.state.value}</button>
+        )
    }
 }
 
