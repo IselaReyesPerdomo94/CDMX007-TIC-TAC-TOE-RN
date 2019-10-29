@@ -49,9 +49,11 @@ Webpack permite que trabajes con cualquier tipo de archivo (como preprocesadores
     - webpack-cli
     - webpack-dev-server
 
-Y por supuesto instalé React y react-dom como dependencias para el cliente.
+Y por supuesto instalé React y react-dom como dependencias para el cliente, junto con las siguientes:
 - react
 - react-dom
+- react-router-dom
+- [prop-types](https://www.npmjs.com/package/prop-types)
 
 Para poder estilizar el juego instalé:
  - css-loader
