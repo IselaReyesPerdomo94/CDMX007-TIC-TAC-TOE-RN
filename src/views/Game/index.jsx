@@ -1,17 +1,38 @@
 import React, {Component, Fragment} from 'react';
 import Board from 'components/Board';
 import YellowButton from 'components/YellowButton/';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUndo } from '@fortawesome/free-solid-svg-icons'
 import './index.css';
 
 class Game extends Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            playerx: true
+        }
+
+        this.changeTurn = this.changeTurn.bind(this);
+    }
+    
+    changeTurn(){
+        this.setState(prevState => ({
+            playerx: !prevState.playerx
+        }))
+    }
+
     render(){
+        const turn = `${this.state.playerx? 'X' : 'O'}`;
         return(
             <Fragment>
-                <header>
-                <h4 className="title">Es turno de </h4><span></span>
+                <header className="game-header">
+                    <h4 className="title">Es turno de: </h4>
+                    <span className="title turn">{turn}</span>
+                    <FontAwesomeIcon className="title" icon={faUndo} />
                 </header>
                 <main className="game">
-                    <Board/>
+                    <Board turn={this.state.playerx} changeTurn={this.changeTurn}/>
                 </main>
                 <footer>
                     <YellowButton text='Salir' link='/'/>
