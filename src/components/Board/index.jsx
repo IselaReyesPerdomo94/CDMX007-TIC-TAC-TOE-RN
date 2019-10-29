@@ -6,7 +6,7 @@ import './index.css';
 class Board extends Component{
     render(){
         const {turn, changeTurn} = this.props;
-        console.log(changeTurn)
+        
         return(
             <div className="board">
                 <SquareBox turn={turn} changeTurn={changeTurn}/>
@@ -24,7 +24,8 @@ class Board extends Component{
 }
 
 Board.propTypes = {
-    turn: PropTypes.bool
+    turn: PropTypes.bool,
+    changeTurn: PropTypes.func
 };
 
 
