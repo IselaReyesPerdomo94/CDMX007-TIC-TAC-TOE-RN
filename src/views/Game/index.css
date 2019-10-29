@@ -1,8 +1,17 @@
+.game-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .title {
     margin: 1rem;
     color: white;
     font-size: 2rem;
     font-family: Neucha;
+}
+
+.turn {
+    color: #F2C94C;
 }
 
 .game {
