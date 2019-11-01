@@ -4,20 +4,26 @@ import PropTypes from 'prop-types';
 import './index.css';
 
 class Board extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            value: null
+        }
+    }
     render(){
         const {turn, changeTurn} = this.props;
         
         return(
             <div className="board">
-                <SquareBox turn={turn} changeTurn={changeTurn}/>
-                <SquareBox turn={turn} changeTurn={changeTurn}/>
-                <SquareBox turn={turn} changeTurn={changeTurn}/>
-                <SquareBox turn={turn} changeTurn={changeTurn}/>
-                <SquareBox turn={turn} changeTurn={changeTurn}/>
-                <SquareBox turn={turn} changeTurn={changeTurn}/>
-                <SquareBox turn={turn} changeTurn={changeTurn}/>
-                <SquareBox turn={turn} changeTurn={changeTurn}/>
-                <SquareBox turn={turn} changeTurn={changeTurn}/>
+                <SquareBox turn={turn} changeTurn={changeTurn} value={this.state.value}/>
+                <SquareBox turn={turn} changeTurn={changeTurn} value={this.state.value}/>
+                <SquareBox turn={turn} changeTurn={changeTurn} value={this.state.value}/>
+                <SquareBox turn={turn} changeTurn={changeTurn} value={this.state.value}/>
+                <SquareBox turn={turn} changeTurn={changeTurn} value={this.state.value}/>
+                <SquareBox turn={turn} changeTurn={changeTurn} value={this.state.value}/>
+                <SquareBox turn={turn} changeTurn={changeTurn} value={this.state.value}/>
+                <SquareBox turn={turn} changeTurn={changeTurn} value={this.state.value}/>
+                <SquareBox turn={turn} changeTurn={changeTurn} value={this.state.value}/>
             </div>
         )
     }

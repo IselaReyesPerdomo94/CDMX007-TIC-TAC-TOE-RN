@@ -4,32 +4,18 @@ import PropTypes from 'prop-types';
 import './index.css';
 
 class SquareBox extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: null
-        };
 
-        this.printAndChangeTurn = this.printAndChangeTurn.bind(this)
-    }
-    printAndChangeTurn(){
-        const {turn, changeTurn} = this.props;
-        const symbol = `${turn ? 'X': 'O'}`
-        this.setState({value: symbol})
-        changeTurn()
-    }
    render(){
-        const symbol = this.state.value;
-        const turnColor = `square-box ${symbol === 'X' ? 'green': 'pink'}`
+       const {value} = this.props;
         return( 
-           <button className={turnColor} onClick={()=> this.printAndChangeTurn()}>{this.state.value}</button>
+           <button className='square-box' >{value}</button>
         )
    }
 }
 
-SquareBox.protoTypes={
-    turn: PropTypes.bool,
-    changeTurn: PropTypes.func
-}
+// SquareBox.protoTypes={
+//     turn: PropTypes.bool,
+//     changeTurn: PropTypes.func
+// }
 
 export default SquareBox;
