@@ -32,7 +32,9 @@ class Board extends Component{
     render(){
         return(
             <Fragment>
-                <FontAwesomeIcon className="title" icon={faUndo} onClick={this.startAgain}/>
+                <div className="undo">
+                    <FontAwesomeIcon className="title" icon={faUndo} onClick={this.startAgain}/>
+                </div>
                 <div className="board">
                     {this.state.value.map((squareState, index)=>
                         <SquareBox 

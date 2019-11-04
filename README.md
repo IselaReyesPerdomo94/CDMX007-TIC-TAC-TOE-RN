@@ -75,11 +75,11 @@ O aquí abajo:
 ### UI
 
 * [x] Muestra grilla (grid) de 3x3
-* [ ] Muestra jugador al que le toca su turno
-* [ ] Permite marcar cajita vacía
-* [ ] Cambia el turno después de marcar cajita
+* [x] Muestra jugador al que le toca su turno
+* [x] Permite marcar cajita vacía
+* [x] Cambia el turno después de marcar cajita
 * [ ] No permite marcar cajita ya marcada
-* [ ] Permite reiniciar la partida
+* [x] Permite reiniciar la partida
 * [ ] Detecta jugadas ganadoras en eje x
 * [ ] Detecta jugadas ganadoras en eje y
 * [ ] Detecta jugadas ganadoras en diagonales
