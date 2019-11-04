@@ -18,9 +18,14 @@ class SquareBox extends Component{
    }
 }
 
-// SquareBox.protoTypes={
-//     turn: PropTypes.bool,
-//     changeTurn: PropTypes.func
-// }
+SquareBox.protoTypes={
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object
+    ]),
+    handleClick: PropTypes.func,
+    id: PropTypes.number,
+    key: PropTypes.number
+}
 
 export default SquareBox;
