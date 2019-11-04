@@ -29,7 +29,7 @@ class Game extends Component{
                 <header className="game-header">
                     <h4 className="title">Es turno de: </h4>
                     <span className="title turn">{turn}</span>
-                    <FontAwesomeIcon className="title" icon={faUndo} />
+                    <FontAwesomeIcon className="title" icon={faUndo} onClick={()=>console.log('holo')}/>
                 </header>
                 <main className="game">
                     <Board turn={this.state.playerx} changeTurn={this.changeTurn}/>
