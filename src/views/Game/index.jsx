@@ -1,8 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import Board from 'components/Board';
 import YellowButton from 'components/YellowButton/';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUndo } from '@fortawesome/free-solid-svg-icons'
+
 import './index.css';
 
 class Game extends Component{
@@ -29,7 +28,7 @@ class Game extends Component{
                 <header className="game-header">
                     <h4 className="title">Es turno de: </h4>
                     <span className="title turn">{turn}</span>
-                    <FontAwesomeIcon className="title" icon={faUndo} onClick={()=>console.log('holo')}/>
+                    
                 </header>
                 <main className="game">
                     <Board turn={this.state.playerx} changeTurn={this.changeTurn}/>
