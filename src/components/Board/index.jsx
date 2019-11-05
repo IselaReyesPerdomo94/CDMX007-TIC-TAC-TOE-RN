@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import SquareBox from 'components/SquareBox/';
+import SquareBox from 'components/SquareBox/index.jsx';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUndo } from '@fortawesome/free-solid-svg-icons'
@@ -8,11 +8,9 @@ import './index.css';
 class Board extends Component{
     constructor(props){
         super(props);
-
         this.state={
             value: Array(9).fill(null)
         }
-
         this.handleClick = this.handleClick.bind(this)
         this.startAgain= this.startAgain.bind(this)
     }
