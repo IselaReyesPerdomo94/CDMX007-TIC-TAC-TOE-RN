@@ -6,6 +6,7 @@ import { configure, shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
+//testing renders
 describe('Board component test with Enzyme, only renders', () => {
     it('renders Board without crashing', () => {
        shallow(<Board />);
@@ -19,3 +20,6 @@ describe('Board component test with Enzyme, only renders', () => {
       expect(wrapper.find(FontAwesomeIcon)).toHaveLength(1);
     })
  });
+
+ //testing classes
+ 
