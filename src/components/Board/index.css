@@ -11,3 +11,8 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.alert{
+    color: yellow;
+    font-size: 1.5rem;
+}

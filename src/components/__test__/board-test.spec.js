@@ -22,4 +22,21 @@ describe('Board component test with Enzyme, only renders', () => {
  });
 
  //testing classes
- 
+ describe('Testing Board component with Enzyme, only classes', () => {
+  it('renders one div with class board', ()=>{
+    const wrapper = mount(<Board/>)
+    expect(wrapper.find('div').hasClass('board')).toEqual(true)
+  })
+  it('renders one Icon with class title', ()=>{
+    const wrapper = mount(<Board/>)
+    expect(wrapper.find(FontAwesomeIcon).hasClass('title')).toEqual(true)
+  })
+  it('renders one span with class undo', ()=>{
+    const wrapper = mount(<Board/>)
+    expect(wrapper.find('span').hasClass('undo')).toEqual(true)
+  })
+});
+
+//testing props
+
+//testing state
