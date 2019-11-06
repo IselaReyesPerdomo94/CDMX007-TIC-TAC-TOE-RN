@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
-import Board from 'components/Board';
 import YellowButton from 'components/YellowButton/';
-
+import Board from 'components/Board';
+// import Message from 'components/Message';
 import './index.css';
 
 class Game extends Component{
