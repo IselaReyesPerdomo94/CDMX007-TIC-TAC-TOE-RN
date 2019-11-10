@@ -42,7 +42,7 @@ class Board extends Component{
     render(){
         return(
             <Fragment>
-                <span className="alert">{this.state.alert}</span>
+                <label className="alert">{this.state.alert}</label>
                 <span className="undo">
                     <FontAwesomeIcon className="title" icon={faUndo} onClick={this.startAgain}/>
                 </span>

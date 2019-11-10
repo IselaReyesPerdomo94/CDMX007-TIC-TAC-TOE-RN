@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import YellowButton from 'components/YellowButton/';
 import Board from 'components/Board';
-// import Message from 'components/Message';
+import Message from 'components/Message';
 import './index.css';
 
 class Game extends Component{
@@ -9,10 +9,12 @@ class Game extends Component{
         super(props);
 
         this.state = {
-            playerx: true
+            playerx: true,
+            open: true
         }
 
         this.changeTurn = this.changeTurn.bind(this);
+        this.closeMessage = this.closeMessage.bind(this);
     }
     
     changeTurn(){
@@ -21,10 +23,27 @@ class Game extends Component{
         }))
     }
 
+    closeMessage(){
+        this.setState({open: false})
+    }
+
+    openMessage(){
+        this.setState({open: true})
+    }
+
     render(){
         const turn = `${this.state.playerx? 'X' : 'O'}`;
         return(
             <Fragment>
+                <Message 
+                    title="Empate"
+                    body="Upps!! Quedaron empatados :c"
+                    buttonText="Cerrar"
+                    alt="Empate"
+                    img="./img/empate.png"
+                    onClick={this.closeMessage}
+                    open={this.state.open}
+                    />
                 <header className="game-header">
                     <h4 className="title">Es turno de: </h4>
                     <span className="title turn">{turn}</span>

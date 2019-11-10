@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">53.85% </span>
+        <span class="strong">42.11% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>7/13</span>
+        <span class='fraction'>8/19</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">60% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/5</span>
+        <span class='fraction'>3/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">53.85% </span>
+        <span class="strong">42.11% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>7/13</span>
+        <span class='fraction'>8/19</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,7 +101,21 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -114,15 +128,27 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,6 +158,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,15 +195,23 @@ class Board extends Component{
     constructor(props){
         super(props);
         this.state={
-            value: Array(9).fill(null)
+            value: Array(9).fill(null),
+            alert: ''
         }
         this.handleClick = this.handleClick.bind(this)
         this.startAgain= this.startAgain.bind(this)
+        this.turnOffAlert = this.turnOffAlert.bind(this)
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    ha</span>ndleClick(e){
+        
         const boxes = <span class="cstat-no" title="statement not covered" >this.state.value.slice()</span>
         const turn = <span class="cstat-no" title="statement not covered" >this.props.turn;</span>
+<span class="cstat-no" title="statement not covered" >        if(boxes[e.target.id]!== null){</span>
+<span class="cstat-no" title="statement not covered" >            this.setState({alert: "¡Esta casilla ya está ocupada!"})</span>
+<span class="cstat-no" title="statement not covered" >            setTimeout(this.turnOffAlert, 1500)</span>
+<span class="cstat-no" title="statement not covered" >            return</span>
+        }
 <span class="cstat-no" title="statement not covered" >        boxes[e.target.id] = `${turn ? 'X': 'O'}`</span>
 <span class="cstat-no" title="statement not covered" >        this.setState({value: boxes})</span>
 <span class="cstat-no" title="statement not covered" >        this.props.changeTurn()</span>
@@ -185,12 +221,18 @@ class Board extends Component{
 <span class="cstat-no" title="statement not covered" >        this.setState({value: Array(9).fill(null)})</span>
     }
 &nbsp;
+<span class="fstat-no" title="function not covered" >    tu</span>rnOffAlert (){
+<span class="cstat-no" title="statement not covered" >        this.setState({alert: ''})</span>
+    }
+&nbsp;
     render(){
         return(
             &lt;Fragment&gt;
+                &lt;label className="alert"&gt;{this.state.alert}&lt;/label&gt;
                 &lt;span className="undo"&gt;
                     &lt;FontAwesomeIcon className="title" icon={faUndo} onClick={this.startAgain}/&gt;
                 &lt;/span&gt;
+                
                 &lt;div className="board"&gt;
                     {this.state.value.map((squareState, index)=&gt;
                         &lt;SquareBox 
@@ -217,7 +259,7 @@ export default Board;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Nov 04 2019 22:35:59 GMT-0600 (Central Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 07 2019 15:27:34 GMT-0600 (Central Standard Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>

@@ -40,3 +40,5 @@ describe('Board component test with Enzyme, only renders', () => {
 //testing props
 
 //testing state
+
+//testing events
