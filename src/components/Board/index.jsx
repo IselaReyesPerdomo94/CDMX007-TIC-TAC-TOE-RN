@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import SquareBox from 'components/SquareBox/index.jsx';
+import {checkWinner} from '../../utils/winnerMoves.js';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUndo } from '@fortawesome/free-solid-svg-icons'
@@ -31,6 +32,11 @@ class Board extends Component{
         this.props.changeTurn()
     }
 
+    componentDidUpdate() {
+        const result = checkWinner(this.state.value);
+        
+    }
+
     startAgain(){
         this.setState({value: Array(9).fill(null)})
     }
@@ -42,7 +48,7 @@ class Board extends Component{
     render(){
         return(
             <Fragment>
-                <span className="alert">{this.state.alert}</span>
+                <label className="alert">{this.state.alert}</label>
                 <span className="undo">
                     <FontAwesomeIcon className="title" icon={faUndo} onClick={this.startAgain}/>
                 </span>

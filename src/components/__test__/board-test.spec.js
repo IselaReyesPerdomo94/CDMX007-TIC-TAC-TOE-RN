@@ -2,8 +2,9 @@ import React from 'react';
 import Board from '../Board/index';
 import SquareBox from 'components/SquareBox/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { configure, shallow, mount } from 'enzyme';
+import { configure, mount, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import { wrap } from 'module';
 configure({ adapter: new Adapter() });
 
 //testing renders
@@ -38,5 +39,40 @@ describe('Board component test with Enzyme, only renders', () => {
 });
 
 //testing props
+describe('Testing props', ()=>{
+  it('The prop TURN should be true', ()=>{
+    const wrapper = mount(<Board turn={true} />)
+    expect(wrapper.props().turn).toBeTruthy()
+  })
+  it('The prop TURN should be false', ()=>{
+    const wrapper = mount(<Board turn={false} />)
+    console.log(wrapper)
+    expect(wrapper.props().turn).toBeFalsy()
+  })
+  it('The prop ChangeTurn should be a func', ()=>{
+    const changeTurn = () => {
+      this.setState(prevState => ({
+        playerx: !prevState.playerx
+      }))
+    }
+    const wrapper = mount(<Board changeTurn={changeTurn} />)
+    expect(typeof wrapper.props().changeTurn === 'function').toBeTruthy()
+  })
+})
 
 //testing state
+describe('Testing states in Board', ( )=> {
+  it('The state of value should be an array of null',  () => {
+    const wrapper = mount(<Board />)
+    expect(wrapper.state().value).toEqual([null, null, null, null, null, null, null, null, null])
+  })
+  it('the state of alert should be an empty string', ()=> {
+    const wrapper = mount(<Board />)
+    expect(wrapper.state().alert).toBe('')
+  })
+})
+//testing events
+// describe('Testing events in Board', () => {
+//   it('')
+//   it()
+// })
