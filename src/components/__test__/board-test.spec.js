@@ -59,6 +59,20 @@ describe('Testing props', ()=>{
     expect(typeof wrapper.props().changeTurn === 'function').toBeTruthy()
   })
 })
-//testing state
 
+//testing state
+describe('Testing states in Board', ( )=> {
+  it('The state of value should be an array of null',  () => {
+    const wrapper = mount(<Board />)
+    expect(wrapper.state().value).toEqual([null, null, null, null, null, null, null, null, null])
+  })
+  it('the state of alert should be an empty string', ()=> {
+    const wrapper = mount(<Board />)
+    expect(wrapper.state().alert).toBe('')
+  })
+})
 //testing events
+// describe('Testing events in Board', () => {
+//   it('')
+//   it()
+// })

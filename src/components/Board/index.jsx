@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import SquareBox from 'components/SquareBox/index.jsx';
+import {checkWinner} from '../../utils/winnerMoves.js';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUndo } from '@fortawesome/free-solid-svg-icons'
@@ -29,6 +30,11 @@ class Board extends Component{
         boxes[e.target.id] = `${turn ? 'X': 'O'}`
         this.setState({value: boxes})
         this.props.changeTurn()
+    }
+
+    componentDidUpdate() {
+        const result = checkWinner(this.state.value);
+        
     }
 
     startAgain(){

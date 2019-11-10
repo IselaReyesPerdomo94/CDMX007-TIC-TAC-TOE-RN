@@ -10,7 +10,7 @@ class Game extends Component{
 
         this.state = {
             playerx: true,
-            open: true
+            open: false
         }
 
         this.changeTurn = this.changeTurn.bind(this);
