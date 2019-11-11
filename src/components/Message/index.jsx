@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 const Message = (props) => {
-    const {title, body, img, alt, buttonText, onClick, open} = props;
+    const {title, body, img, alt, buttonText, onClick, open, winner} = props;
      const modal = `layer ${open ? "": "hide"}`;
     return(
         <main className={modal}>
@@ -13,6 +13,7 @@ const Message = (props) => {
                     <span onClick={onClick}>X</span>
                 </header>
                 <article>
+                    <p className="winner">{winner}</p>
                     <p>{body}</p>
                     <figure className="figure-message">
                         <img src={img} alt={alt} />

@@ -6,9 +6,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
     return(
-        <Router  basename={window.location.pathname || ''}>
+        <Router >
             <Switch>
-                <Route exact path="/" ><Home/></Route>
+                <Route exact path="/"><Home/></Route>
                 <Route exact path="/Game"><Game/></Route>
             </Switch>
         </Router>

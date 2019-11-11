@@ -10,11 +10,17 @@ class Game extends Component{
 
         this.state = {
             playerx: true,
-            open: false
+            draw: false,
+            winner: null,
+            message: false
         }
 
         this.changeTurn = this.changeTurn.bind(this);
-        this.closeMessage = this.closeMessage.bind(this);
+        this.chooseWinner = this.chooseWinner.bind(this);
+        this.closeDrawMessage = this.closeDrawMessage.bind(this);
+        this.openDrawMessage = this.openDrawMessage.bind(this);
+        this.openWinnerMessage = this.openWinnerMessage.bind(this);
+        this.closeWinnerMessage = this.closeWinnerMessage.bind(this);
     }
     
     changeTurn(){
@@ -23,14 +29,26 @@ class Game extends Component{
         }))
     }
 
-    closeMessage(){
-        this.setState({open: false})
+    closeDrawMessage(){
+        this.setState({draw: false})
     }
 
-    openMessage(){
-        this.setState({open: true})
+    openDrawMessage(){
+        this.setState({draw: true})
     }
 
+    closeWinnerMessage(){
+        this.setState({message: false})
+        this.setState({winner: null})
+    }
+
+    openWinnerMessage(){
+        this.setState({message: true})
+    }
+
+    chooseWinner(player){
+        this.setState({winner: player})
+    }
     render(){
         const turn = `${this.state.playerx? 'X' : 'O'}`;
         return(
@@ -41,8 +59,18 @@ class Game extends Component{
                     buttonText="Cerrar"
                     alt="Empate"
                     img="./img/empate.png"
-                    onClick={this.closeMessage}
-                    open={this.state.open}
+                    onClick={this.closeDrawMessage}
+                    open={this.state.draw}
+                    />
+                <Message 
+                    title="¡Ganador!"
+                    body="¡Felicidades haz ganado!"
+                    winner={this.state.winner}
+                    buttonText="Cerrar"
+                    alt="Empate"
+                    img="./img/michi.png"
+                    onClick={this.closeWinnerMessage}
+                    open={this.state.message}
                     />
                 <header className="game-header">
                     <h4 className="title">Es turno de: </h4>
@@ -50,7 +78,14 @@ class Game extends Component{
                     
                 </header>
                 <main className="game">
-                    <Board turn={this.state.playerx} changeTurn={this.changeTurn}/>
+                    <Board 
+                        turn={this.state.playerx} 
+                        changeTurn={this.changeTurn}
+                        openDrawMessage={this.openDrawMessage}
+                        openWinnerMessage={this.openWinnerMessage}
+                        chooseWinner={this.chooseWinner}
+                        winner={this.state.winner}
+                        />
                 </main>
                 <footer>
                     <YellowButton text='Salir' link='/'/>
