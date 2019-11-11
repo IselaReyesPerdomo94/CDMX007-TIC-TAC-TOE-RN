@@ -83,10 +83,10 @@ O aquí abajo:
 * [x] Detecta jugadas ganadoras en eje x
 * [x] Detecta jugadas ganadoras en eje y
 * [x] Detecta jugadas ganadoras en diagonales
-* [ ] Muestra jugador ganador cuando gana
-* [ ] Muestra jugada ganadora cuando hay ganador
+* [x] Muestra jugador ganador cuando gana
+* [x] Muestra jugada ganadora cuando hay ganador
 * [ ] Muestra empate cuando nadie gana y no quedan cajitas que marcar
-* [ ] Permire volver a empezar cuando termina una partida (alguien ganó o empate)
+* [x] Permire volver a empezar cuando termina una partida (alguien ganó o empate)
 
 
 

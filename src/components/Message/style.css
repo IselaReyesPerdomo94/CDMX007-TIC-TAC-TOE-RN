@@ -42,6 +42,11 @@
     height: 100%;
 }
 
+.winner{
+    color: yellow;
+    font-size: 4rem;
+}
+
 .hide{
     display: none;
 }

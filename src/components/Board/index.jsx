@@ -34,7 +34,11 @@ class Board extends Component{
 
     componentDidUpdate() {
         const result = checkWinner(this.state.value);
-        
+        if(result.gameEnded && !this.props.winner){   
+            this.props.chooseWinner(result.winner)
+            this.props.openWinnerMessage()
+            this.startAgain()
+        }     
     }
 
     startAgain(){
@@ -50,7 +54,10 @@ class Board extends Component{
             <Fragment>
                 <label className="alert">{this.state.alert}</label>
                 <span className="undo">
-                    <FontAwesomeIcon className="title" icon={faUndo} onClick={this.startAgain}/>
+                    <FontAwesomeIcon 
+                        className="title" 
+                        icon={faUndo} 
+                        onClick={this.startAgain}/>
                 </span>
                 
                 <div className="board">

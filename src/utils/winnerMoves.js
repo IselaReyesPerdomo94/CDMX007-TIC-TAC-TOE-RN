@@ -12,9 +12,9 @@ export const checkWinner = (array) => {
         for (let i = 0; i < moves.length; i++) {
           const [a, b, c] = moves[i];
           if (array[a] && array[a] === array[b] && array[a] === array[c]) {
-            return array[a];
+            return {gameEnded:true,winner:array[a]};
           }
         }
-        return null;
+        return {gameEnded:false,winner:null};
 }
 
