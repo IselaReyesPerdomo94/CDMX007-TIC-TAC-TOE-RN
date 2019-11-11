@@ -15,6 +15,13 @@ export const checkWinner = (array) => {
             return {gameEnded:true,winner:array[a]};
           }
         }
-        return {gameEnded:false,winner:null};
+        return {gameEnded:false, winner:null};
 }
 
+export const checkDraw = (array) => {
+    const newArray = array.filter(item => item !== null)
+    if(newArray.length === array.length){
+        return true
+    }
+    return false
+}

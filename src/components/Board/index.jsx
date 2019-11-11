@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import SquareBox from 'components/SquareBox/index.jsx';
-import {checkWinner} from '../../utils/winnerMoves.js';
+import {checkWinner, checkDraw} from '../../utils/winnerMoves.js';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUndo } from '@fortawesome/free-solid-svg-icons'
@@ -34,9 +34,14 @@ class Board extends Component{
 
     componentDidUpdate() {
         const result = checkWinner(this.state.value);
+        const draw = checkDraw(this.state.value)
         if(result.gameEnded && !this.props.winner){   
             this.props.chooseWinner(result.winner)
             this.props.openWinnerMessage()
+            this.startAgain()
+        }
+        if(draw && this.props.winner === null){
+            this.props.openDrawMessage()
             this.startAgain()
         }     
     }
