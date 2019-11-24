@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom';
-import YellowButton from 'components/YellowButton';
+import {withRouter,Redirect} from 'react-router-dom';
 import './style.css';
 
 class NewPlayer extends Component {
@@ -26,18 +25,20 @@ class NewPlayer extends Component {
     }
 
     saveUserNameinLocal(){
+        const { history } = this.props
         const name = this.state.name
         const validated = this.validateNameInput(name)
         if(validated){
             localStorage.setItem('userName', name)
+            history.replace('/Game')
         }
-        return false;
     }
 
     render(){
         const nameFromLocalStorage = localStorage.getItem('userName')
-        const userSaved = this.saveUserNameinLocal()
+        
         return (
+            !nameFromLocalStorage &&
             <main className="new-player-main">
                 <header>
                 <h2>¡Hola {this.state.name}!</h2>
@@ -55,17 +56,13 @@ class NewPlayer extends Component {
                         className="input-new-player"/>
                     <button
                         text="Jugar"
-                        onClick={()=> this.saveUserNameinLocal}
+                        onClick={this.saveUserNameinLocal}
                         className="yellow-button"
                     >Jugar</button>
-                    {
-                        nameFromLocalStorage || userSaved ? <Redirect to="/Game"/> 
-                        : console.log('no hay usuario')
-                    }
                 </section>
             </main>
-        )
+        ) || <Redirect to="/Game"/>
     }
 }
 
-export default NewPlayer;
+export default withRouter(NewPlayer);
