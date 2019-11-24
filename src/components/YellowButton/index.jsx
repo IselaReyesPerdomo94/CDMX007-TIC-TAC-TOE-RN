@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
-const YellowButton = ({link, text}) => {
+const YellowButton = ({link, text, onClick}) => {
     return(
-        <Link className="yellow-button" to={link}>{text}</Link>
+        <Link 
+            className="yellow-button" 
+            onClick={onClick}
+            to={link}>{text}</Link>
     )
 }
 

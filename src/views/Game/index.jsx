@@ -51,6 +51,7 @@ class Game extends Component{
     }
     render(){
         const turn = `${this.state.playerx? 'X' : 'O'}`;
+        const userName = localStorage.getItem('userName')
         return(
             <Fragment>
                 <Message 
@@ -73,9 +74,9 @@ class Game extends Component{
                     open={this.state.message}
                     />
                 <header className="game-header">
+                    <p className="user-name">{userName}</p>
                     <h4 className="title">Es turno de: </h4>
                     <span className="title turn">{turn}</span>
-                    
                 </header>
                 <main className="game">
                     <Board 

@@ -5,15 +5,14 @@ import './index.css';
 class SquareBox extends Component{
 
    render(){
-       const {value, handleClick, id, key} = this.props;
+       const {value, handleClick, id} = this.props;
        const colors = `square-box ${value==="X"? 'green' :'pink' }`
         return( 
            <button 
-                className='square-box' 
                 onClick={handleClick}
                 id={id}
-                key={key}
-                className={colors}>{value}</button>
+                className={colors}
+                value={value}>{value}</button>
         )
    }
 }

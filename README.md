@@ -85,8 +85,13 @@ O aquí abajo:
 * [x] Detecta jugadas ganadoras en diagonales
 * [x] Muestra jugador ganador cuando gana
 * [x] Muestra jugada ganadora cuando hay ganador
-* [ ] Muestra empate cuando nadie gana y no quedan cajitas que marcar
+* [x] Muestra empate cuando nadie gana y no quedan cajitas que marcar
 * [x] Permire volver a empezar cuando termina una partida (alguien ganó o empate)
+* [ ] Le pregunta al jugador su nombre para empezar el juego.
+* [ ] Existe un scoreboard.
+* [ ] Si alguien juega, su score se ve reflejado en el scoreboard.
+* [ ] Si el jugador gana, se le agregan 100 puntos.
+* [ ] Si el jugador pierde, se le restan 20 puntos.
 
 
 

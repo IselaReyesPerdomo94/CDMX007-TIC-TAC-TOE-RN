@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import SquareBox from 'components/SquareBox/index.jsx';
-import {checkWinner} from '../../utils/winnerMoves.js';
+import {checkWinner, checkDraw} from '../../utils/winnerMoves.js';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUndo } from '@fortawesome/free-solid-svg-icons'
@@ -24,7 +24,7 @@ class Board extends Component{
         const turn = this.props.turn;
         if(boxes[e.target.id]!== null){
             this.setState({alert: "¡Esta casilla ya está ocupada!"})
-            setTimeout(this.turnOffAlert, 1500)
+            setTimeout(this.turnOffAlert, 3000)
             return
         }
         boxes[e.target.id] = `${turn ? 'X': 'O'}`
@@ -34,9 +34,14 @@ class Board extends Component{
 
     componentDidUpdate() {
         const result = checkWinner(this.state.value);
+        const draw = checkDraw(this.state.value)
         if(result.gameEnded && !this.props.winner){   
             this.props.chooseWinner(result.winner)
             this.props.openWinnerMessage()
+            this.startAgain()
+        }
+        if(draw && this.props.winner === null){
+            this.props.openDrawMessage()
             this.startAgain()
         }     
     }
@@ -53,13 +58,13 @@ class Board extends Component{
         return(
             <Fragment>
                 <label className="alert">{this.state.alert}</label>
+                
                 <span className="undo">
                     <FontAwesomeIcon 
                         className="title" 
                         icon={faUndo} 
                         onClick={this.startAgain}/>
                 </span>
-                
                 <div className="board">
                     {this.state.value.map((squareState, index)=>
                         <SquareBox 

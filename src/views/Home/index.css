@@ -1,11 +1,11 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    background-color: #334139;
+    background-color: #114B5F;
 }
 
 h1 {
-    color: white;
+    color: #FFDDE2;
     font-size: 4rem;
     margin: 1rem auto;
     text-align: center;
@@ -20,13 +20,15 @@ figure {
 
 footer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     margin: 1rem;
 }
 
 .home {
     margin: 0;
-    height: 45vh;
+    height: 35vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -34,26 +36,27 @@ footer {
 
 .michi-face {
     margin: 0;
-    height: 7rem;
+    height: 5rem;
     transform: rotate(180deg)
 }
 
 .demo {
-    height: 40vh;
+    height: 30vh;
     margin-bottom: 1rem;
 }
 
 .yellow-button {
     border: none;
     width: 15rem;
-    padding: 1rem;
-    color: black;
+    padding: 0.5rem;
+    color: #FFDDE2;
+    margin: 0.5rem;
     font-size: 2rem;
     text-align: center;
     border-radius: 10px;
     font-family: Neucha;
     text-decoration: none;
-    background-color: #F2C94C;
+    background-color: #F92A82;
 }
 
 @media screen and (min-width: 768px) {
