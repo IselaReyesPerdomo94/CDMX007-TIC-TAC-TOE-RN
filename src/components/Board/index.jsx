@@ -24,7 +24,7 @@ class Board extends Component{
         const turn = this.props.turn;
         if(boxes[e.target.id]!== null){
             this.setState({alert: "¡Esta casilla ya está ocupada!"})
-            setTimeout(this.turnOffAlert, 1500)
+            setTimeout(this.turnOffAlert, 3000)
             return
         }
         boxes[e.target.id] = `${turn ? 'X': 'O'}`
@@ -58,13 +58,13 @@ class Board extends Component{
         return(
             <Fragment>
                 <label className="alert">{this.state.alert}</label>
+                
                 <span className="undo">
                     <FontAwesomeIcon 
                         className="title" 
                         icon={faUndo} 
                         onClick={this.startAgain}/>
                 </span>
-                
                 <div className="board">
                     {this.state.value.map((squareState, index)=>
                         <SquareBox 

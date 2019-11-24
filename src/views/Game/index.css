@@ -1,9 +1,10 @@
 .game-header {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .title {
-    margin: 1rem;
+    margin: 0.5rem 1rem;
     color: white;
     font-size: 2rem;
     font-family: Neucha;
@@ -14,6 +15,17 @@
 }
 
 .game {
-    height: 70vh;
-    padding: 1rem;
+    height: 65vh;
+    padding: 0.5rem;
+}
+
+.user-name{
+    width: 100%;
+    color: white;
+    display: block;
+    font-size: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+    font-family: Neucha;
+    background-color: #F92A82;
 }

@@ -7,7 +7,7 @@ const Home = () => {
         <Fragment>
             <header>
                 <figure>
-                    <img alt="michi-face" src="./img/michi.png" className="michi-face"/>
+                    <img alt="michi-face" src="./img/ocuppied.png" className="michi-face"/>
                 </figure>
                 <h1>Michi</h1>
             </header>
@@ -17,7 +17,8 @@ const Home = () => {
                 </figure>
             </main>
             <footer>
-                <YellowButton text="Nueva partida" link="/Game"/>
+                <YellowButton text="Mejores puntajes" link="/Score"/>
+                <YellowButton text="Nueva partida" link="/Player"/>
             </footer>
         </Fragment>
     )
