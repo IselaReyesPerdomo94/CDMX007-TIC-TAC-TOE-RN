@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
 
-class SquareBox extends Component{
+const SquareBox = (props) =>{
 
-   render(){
-       const {value, handleClick, id} = this.props;
+       const {value, handleClick, id} = props;
        const colors = `square-box ${value==="X"? 'green' :'pink' }`
         return( 
            <button 
@@ -14,7 +13,6 @@ class SquareBox extends Component{
                 className={colors}
                 value={value}>{value}</button>
         )
-   }
 }
 
 SquareBox.protoTypes={

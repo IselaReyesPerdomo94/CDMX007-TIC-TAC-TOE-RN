@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import YellowButton from 'components/YellowButton/';
+import {Link} from 'react-router-dom';
 import './index.css';
 
 const Home = () => {
@@ -17,8 +17,8 @@ const Home = () => {
                 </figure>
             </main>
             <footer>
-                <YellowButton text="Mejores puntajes" link="/Score"/>
-                <YellowButton text="Nueva partida" link="/Player"/>
+                <Link to="/Score" className="yellow-button">Mejores puntajes</Link>
+                <Link to="/Player" className="yellow-button">Nueva partida</Link>
             </footer>
         </Fragment>
     )

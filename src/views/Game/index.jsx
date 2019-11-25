@@ -1,9 +1,8 @@
 import React, {Component, Fragment} from 'react';
-import YellowButton from 'components/YellowButton/';
+import {Link} from 'react-router-dom';
 import Board from 'components/Board';
 import Message from 'components/Message';
 import './index.css';
-import { throwStatement } from '@babel/types';
 
 class Game extends Component{
     constructor(props){
@@ -89,7 +88,6 @@ class Game extends Component{
                     <Message 
                     title="¡Uy, perdiste!"
                     body={`¡Mejor suerte para la próxima!`}
-                    winner={this.state.winner}
                     buttonText="Cerrar"
                     alt="Empate"
                     img="./img/empate.png"
@@ -113,7 +111,7 @@ class Game extends Component{
                         />
                 </main>
                 <footer>
-                    <YellowButton text='Salir' link='/'/>
+                    <Link className="yellow-button" to="/">Salir</Link>
                 </footer>
             </Fragment>
         )
