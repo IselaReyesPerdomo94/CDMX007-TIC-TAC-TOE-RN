@@ -33,12 +33,18 @@ class Board extends Component{
     }
 
     componentDidUpdate() {
+        const name = localStorage.getItem('userName')
         const result = checkWinner(this.state.value);
         const draw = checkDraw(this.state.value)
         if(result.gameEnded && !this.props.winner){   
             this.props.chooseWinner(result.winner)
-            this.props.openWinnerMessage()
-            this.startAgain()
+            if(result.winner === 'X'){
+                this.props.openWinnerMessage()
+                this.startAgain()
+            }else if(result.winner === 'O'){
+                this.props.openLooserMessage()
+                this.startAgain()
+            }
         }
         if(draw && this.props.winner === null){
             this.props.openDrawMessage()

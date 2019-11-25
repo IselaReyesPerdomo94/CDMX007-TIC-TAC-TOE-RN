@@ -5,7 +5,7 @@
     position: absolute;
     align-items: center;
     justify-content: center;
-    background-color: rgba(51, 65, 57, 0.9)
+    background-color: rgba(17,75,95, 0.9)
 }
 
 .message{
@@ -19,7 +19,7 @@
     font-family: Neucha;
     border-radius: 10px;
     border: 2px solid white;
-    background-color: #334139;
+    background-color: rgb(17,75,95)
 }
 
 .message header{

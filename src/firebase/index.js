@@ -1,4 +1,9 @@
 import * as firebase from "firebase/app";
+import "firebase/firestore";
+import dotenv from 'dotenv';
+
+dotenv.config();
+console.log(process.env)
 
 const config = {
     apiKey: process.env.API_KEY,
@@ -10,5 +15,5 @@ const config = {
     appId: process.env.APP_ID
 }
 
-firebase.initializeApp(config);
-const db = firebase.firestore();
+export const firebaseApp = firebase.initializeApp(config);
+export const db = firebase.firestore();
