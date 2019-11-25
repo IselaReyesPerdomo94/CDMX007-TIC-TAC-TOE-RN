@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter,Redirect} from 'react-router-dom';
+// import {saveUserInFirebase} from '../../utils/firebaseFunctions';
+
 import './style.css';
 
 class NewPlayer extends Component {
@@ -30,6 +32,7 @@ class NewPlayer extends Component {
         const validated = this.validateNameInput(name)
         if(validated){
             localStorage.setItem('userName', name)
+           // saveUserInFirebase(name)
             history.replace('/Game')
         }
     }
@@ -45,9 +48,10 @@ class NewPlayer extends Component {
                 </header>
                 <section className="section-container">
                     <figure className="new-player-img">
-                        <img src="./img/player.png" alt="new-player"/>
+                        <img src="/img/player.png" alt="new-player"/>
                     </figure>
                     <p>Para iniciar el juego solo agrega tu nombre:</p>
+                    <p>Tu serás X</p>
                     <input 
                         type="text" 
                         name="name" 

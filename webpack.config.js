@@ -2,12 +2,14 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 dotenv.config();
 
 const root = path.resolve(__dirname, 'src')
 
-const config = {
+const config = env => {
+     return {
     mode: process.env.NODE_ENV || 'development',
     entry: {
         main: `${root}/index.jsx`
@@ -45,7 +47,17 @@ const config = {
             }
         ]
     },
+    // target: 'node',
+    node: {
+        fs: "empty"
+     },
     plugins: [
+        new CopyWebpackPlugin([
+            {
+                from: 'public',
+                to: './'
+            }
+        ]),
         new HtmlWebpackPlugin({
             inject: 'body',
             template: './index.ejs',
@@ -53,6 +65,7 @@ const config = {
             filename: './index.html'
         })
     ]
+    }
 }
 
 module.exports = config;
